@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentor de Carreira | 3º Ano do Ensino Médio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+  <!-- Ícones Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Cabeçalho -->
+    <header class="header">
+      <div class="logo">
+        <i data-lucide="compass" class="logo-icon"></i>
+        <span>MentorDe<strong>Carreira</strong></span>
+      </div>
+      <p class="tagline">Descubra o seu caminho para o futuro após o Ensino Médio</p>
+    </header>
+
+    <!-- Tela Inicial / Intro -->
+    <section id="introScreen" class="card card-hero">
+      <div class="hero-content">
+        <span class="badge">Exclusivo para o 3º Ano</span>
+        <h2>Indeciso sobre qual faculdade ou profissão escolher?</h2>
+        <p>Responda a algumas perguntas rápidas sobre seus gostos, habilidades e estilo de vida ideal. Nosso algoritmo vai analisar seu perfil e sugerir as melhores áreas de atuação para você!</p>
+        
+        <div class="features-grid">
+          <div class="feature-item">
+            <i data-lucide="target"></i>
+            <span>Mapeamento de Perfil</span>
+          </div>
+          <div class="feature-item">
+            <i data-lucide="graduation-cap"></i>
+            <span>Sugestões de Cursos</span>
+          </div>
+          <div class="feature-item">
+            <i data-lucide="map-pin"></i>
+            <span>Plano de Ação Inicial</span>
+          </div>
+        </div>
+
+        <button id="btnStart" class="btn btn-primary btn-large">
+          <i data-lucide="sparkles"></i> Começar Teste Vocacional
+        </button>
+      </div>
+    </section>
+
+    <!-- Tela do Questionário -->
+    <section id="quizScreen" class="card hidden">
+      <div class="quiz-header">
+        <div class="progress-bar-container">
+          <div id="progressBar" class="progress-bar" style="width: 0%;"></div>
+        </div>
+        <span id="questionCounter" class="question-counter">Pergunta 1 de 6</span>
+      </div>
+
+      <div class="quiz-body">
+        <h3 id="questionText" class="question-title">Carregando pergunta...</h3>
+        <div id="optionsContainer" class="options-container">
+          <!-- As opções serão inseridas dinamicamente via JS -->
+        </div>
+      </div>
+
+      <div class="quiz-footer">
+        <button id="btnPrev" class="btn btn-secondary hidden">
+          <i data-lucide="arrow-left"></i> Anterior
+        </button>
+      </div>
+    </section>
+
+    <!-- Tela de Resultado -->
+    <section id="resultScreen" class="card hidden">
+      <div class="result-header">
+        <div class="result-badge">
+          <i data-lucide="award"></i> Seu Perfil Identificado
+        </div>
+        <h2 id="resultTitle">Analisando respostas...</h2>
+        <p id="resultDescription">Descrição do seu perfil...</p>
+      </div>
+
+      <!-- Sugestões de Carreiras -->
+      <div class="result-section">
+        <h3><i data-lucide="briefcase"></i> Profissões Recomendadas:</h3>
+        <div id="careersGrid" class="careers-grid">
+          <!-- Cards de carreiras inseridos via JS -->
+        </div>
+      </div>
+
+      <!-- Cursos Recomendados -->
+      <div class="result-section">
+        <h3><i data-lucide="book-open"></i> Opções de Formação (Graduação/Técnico):</h3>
+        <ul id="coursesList" class="courses-list">
+          <!-- Lista de cursos via JS -->
+        </ul>
+      </div>
+
+      <!-- Próximos Passos -->
+      <div class="result-section steps-box">
+        <h3><i data-lucide="check-circle-2"></i> Próximos passos para o 3º Ano:</h3>
+        <ol class="action-steps">
+          <li>Pesquise as notas de corte do ENEM/SISI das faculdades da sua região.</li>
+          <li>Procure conversar com profissionais que já atuam nas áreas sugeridas.</li>
+          <li>Monte um cronograma de estudos focado nas matérias de peso do seu curso.</li>
+        </ol>
+      </div>
+
+      <!-- Ações -->
+      <div class="result-actions">
+        <button id="btnRestart" class="btn btn-secondary">
+          <i data-lucide="rotate-ccw"></i> Refazer Teste
+        </button>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <p>Desenvolvido para ajudar alunos do Ensino Médio a construírem o seu futuro | Projeto Open Source</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
